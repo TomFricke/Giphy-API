@@ -81,7 +81,6 @@ $(document).ready(function() {
     
     
     });
-    //click on animated picture makes it NOT  animated
     $(document).on("mouseout", ".moving", function() {
         // console.log(this.src);
         // console.log($(this).data('id'));
@@ -92,12 +91,6 @@ $(document).ready(function() {
     });
     
     function showMePictures(lookingFor) {
-    
-    //-----------------------------------------------------
-        //https://media4.giphy.com/media/bYI4evfBRimKA/giphy.gif
-        // .data.images.original
-        // .data.images.original_still
-    //-----------------------------------------------------
     
     //main AJAX call
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + lookingFor + "/&api_key=dc6zaTOxFJmzC&limit=100";
@@ -119,12 +112,7 @@ $(document).ready(function() {
     
     
             for (p in randomPicturesIndexes) {
-                //-----------------------------------------------------
-                // console.log(response.data[bufferIndex]);
-                // console.log(response.data[bufferIndex].id);
-                // console.log(randomPicturesIndexes[p])
-                //-----------------------------------------------------
-                var bufferIndex = randomPicturesIndexes[p]; //index set
+                var bufferIndex = randomPicturesIndexes[p];
     
                 console.log(`${response.data[bufferIndex].images.original_still.url}`); // pulling URL's for pictures and adding images
                 $('#frame').prepend(`<img class="notMoving" src="${response.data[bufferIndex].images.original_still.url}" data-id="${response.data[bufferIndex].id}" height="150" width="150""> `);
