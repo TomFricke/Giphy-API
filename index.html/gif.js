@@ -74,7 +74,7 @@ $(document).ready(function() {
     $(document).on("mouseover", ".notMoving", function() {
         // console.log(this.src);
         // console.log($(this).data('id'));
-        this.src = `https://media4.giphy.com/media/${$(this).data('id')}/giphy.gif`;
+        
         $(this).removeClass('notMoving');
         $(this).addClass('moving');
         $(this).addClass('customcursor');
@@ -84,7 +84,7 @@ $(document).ready(function() {
     $(document).on("mouseout", ".moving", function() {
         // console.log(this.src);
         // console.log($(this).data('id'));
-        this.src = `https://media4.giphy.com/media/${$(this).data('id')}/giphy_s.gif`; // that _s does everything here
+        this.src =; // that _s does everything here
         $(this).removeClass('moving');
         $(this).addClass('notMoving');
         $(this).removeClass('customcursor');
@@ -93,7 +93,7 @@ $(document).ready(function() {
     function showMePictures(lookingFor) {
     
     //main AJAX call
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + lookingFor + "/&api_key=dc6zaTOxFJmzC&limit=100";
+    
     
         var pictures = [];
         var links = [];
